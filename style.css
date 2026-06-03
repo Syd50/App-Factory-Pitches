@@ -97,3 +97,38 @@ button {
 
     border-radius: 20px;
 }
+
+.question-section {
+    min-height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background: #111;
+}
+
+.question-section h2 {
+    font-size: 8rem;
+    font-weight: 900;
+    letter-spacing: 0.1em;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+.question-section h2 {
+    font-size: 8rem;
+    font-weight: 900;
+
+    opacity: 0;
+    transform: translateY(50px);
+
+    transition: all 1s ease;
+}
+
+.question-section h2.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
