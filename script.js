@@ -9,23 +9,28 @@ function animate() {
         `rotate(${Math.sin(angle * 0.02) * 3}deg)`;
 
     requestAnimationFrame(animate);
+}
 
-    const question = document.querySelector(".question-section h2");
+animate();
+
+
+// QUESTION FADE-IN
+
+const questionSection =
+    document.querySelector(".question-section");
 
 const observer = new IntersectionObserver((entries) => {
 
     entries.forEach(entry => {
 
-        if(entry.isIntersecting) {
-            question.classList.add("visible");
+        if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
         }
 
     });
 
+}, {
+    threshold: 0.2
 });
 
-observer.observe(question);
-}
-
-
-animate();
+observer.observe(questionSection);
